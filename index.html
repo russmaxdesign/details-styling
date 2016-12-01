@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Styling the details element</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Styling the &lt;details&gt; element</h1>
+    <p><a href="https://github.com/russmaxdesign/details-styling">Github Page</a></p>
+    <p>A quick demo showing how to style the <code>&lt;details&gt;</code> element icons.</p>
+
+    <h2>Example</h2>
+    <details class="details">
+      <summary class="details__summary">Afghan Hound</summary>
+      <p class="details__content">The Afghan Hound is a hound that is distinguished by its thick, fine, silky coat and its tail with a ring curl at the end. The breed was selectively bred for its unique features in the cold mountains of Afghanistan. Other names for this breed are Kuchi Hound, Tāzī, Balkh Hound, Baluchi Hound, Barakzai Hound, Shalgar Hound, Kabul Hound, Galanday Hound or sometimes incorrectly African Hound.</p>
+    </details>
+
+    <details class="details">
+      <summary class="details__summary">Belgian Sheepdog</summary>
+      <p class="details__content">The Belgian Shepherd is a breed of medium-to-large-sized herding dog. It originated in Belgium and is similar to other sheep herding dogs from that region, including the Dutch Shepherd, the German Shepherd, the Briard, and others. Four types have been identified by various registries as separate breeds or varieties: Groenendael, Laekenois, Tervuren, and Malinois.</p>
+    </details>
+
+    <details class="details">
+      <summary class="details__summary">Golden Retriever</summary>
+      <p class="details__content">The Golden Retriever is a large-sized breed of dog bred as gun dogs to retrieve shot waterfowl such as ducks and upland game birds during hunting and shooting parties, and were named 'retriever' because of their ability to retrieve shot game undamaged. Golden Retrievers have an instinctive love of water, and are easy to train to basic or advanced obedience standards.</p>
+    </details>
+
+    <details class="details">
+      <summary class="details__summary">Australian Kelpie</summary>
+      <p class="details__content">The Australian Kelpie, or simply Kelpie, is an Australian sheep dog successful at mustering and droving with little or no guidance. It is a medium-sized dog and comes in a variety of colours. The Kelpie has been exported throughout the world and is used to muster livestock, primarily sheep, cattle and goats.</p>
+    </details>
+    <hr>
+
+    <h2>Code</h2>
+    <figure>
+      <figcaption class="markup-heading">Markup</figcaption>
+  <pre><code class="language-markup">&lt;details class="details"&gt;
+  &lt;summary class="details__summary"&gt;This is summary example 1&lt;/summary&gt;
+  &lt;p class="details__content"&gt;Lorem ipsum dolor...&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+    </figure>
+
+    <figure>
+      <figcaption class="markup-heading">SCSS</figcaption>
+<pre><code class="language-scss">// details
+
+.details {
+  position: relative;
+  margin: 0 0 .3em;
+}
+
+.details__summary {
+  padding: .3em .3em .4em 28px;
+  cursor: pointer;
+  background: #eee;
+}
+
+.details__summary:hover,
+.details__summary:focus {
+  background: #ddd;
+}
+
+.details__summary:active {
+  background: #ccc;
+}
+
+.details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.details__summary:before {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  background: url(../img/details-closed.png);
+}
+
+.details[open] .details__summary:before {
+  background: url(../img/details-open.png);
+}
+
+.details__content {
+  margin: .6em 0 1.5em;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <p style="margin-top: 2em;"><a href="https://github.com/russmaxdesign/details-styling">Github Page</a></p>
+  </div>
+
+<script src="assets/js/prism.js"></script>
+</body>
+</html>
